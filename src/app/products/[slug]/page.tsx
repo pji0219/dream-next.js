@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 type Props = {
   params: {
     slug: string;
@@ -5,6 +7,10 @@ type Props = {
 };
 
 export default function Pants({ params }: Props) {
+  // 경로 별로 not-found 파일을 만들면 경로 별로 다른 UI를 보여줄 수 있다.
+  if (params.slug === 'not') {
+    notFound();
+  }
   return <h1>{params.slug} 제품 설명 페이지!</h1>;
 }
 
