@@ -21,8 +21,8 @@ export default function RootLayout({
         <header className={styles.header}>
           <h1>Demo Note</h1>
           <nav className={styles.nav}>
-            <a href=''>Contract</a>
-            <a href=''>About</a>
+            <a href='/contact'>Contract</a>
+            <a href='/about'>About</a>
           </nav>
         </header>
         {children}
