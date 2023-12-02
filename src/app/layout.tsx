@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -21,8 +23,9 @@ export default function RootLayout({
         <header className={styles.header}>
           <h1>Demo Note</h1>
           <nav className={styles.nav}>
-            <a href='/contact'>Contract</a>
-            <a href='/about'>About</a>
+            <Link href='/products'>products</Link>
+            <Link href='/contact'>Contract</Link>
+            <Link href='/about'>About</Link>
           </nav>
         </header>
         {children}
