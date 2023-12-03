@@ -8,6 +8,13 @@ type Props = {
   };
 };
 
+// 동적 메타데이터
+export function generateMetadata({ params }: Props) {
+  return {
+    title: `제품 이름: ${params.slug}`,
+  };
+}
+
 export default function Pants({ params }: Props) {
   // 경로 별로 not-found 파일을 만들면 경로 별로 다른 UI를 보여줄 수 있다.
   if (params.slug === 'not') {
