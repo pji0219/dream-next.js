@@ -1,3 +1,4 @@
+import Counter from '@/components/Counter';
 import os from 'os'; // 노드 APIs
 
 /**
@@ -22,10 +23,15 @@ import os from 'os'; // 노드 APIs
   메모리 저장하는 것, 로컬 호스트에 저장하고 읽고 쓰는 것은 불가능 하다.
  */
 export default function HomePage() {
-  console.log('안녕!!');
+  console.log('안녕!! - 서버');
   console.log(os.hostname());
 
   // 서버 컴포넌트이기 때문에 사용 불가
   // const [name, setName] = useState('');
-  return <h1>홈 페이지다!</h1>;
+  return (
+    <>
+      <h1>홈 페이지다!</h1>
+      <Counter />
+    </>
+  );
 }
