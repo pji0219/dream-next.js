@@ -15,6 +15,7 @@ export function generateMetadata({ params }: Props) {
   };
 }
 
+// 서버 파일에 있는 데이터중 해당 제품의 정보를 찾아서 그걸 보여줌
 export default function Pants({ params }: Props) {
   // 경로 별로 not-found 파일을 만들면 경로 별로 다른 UI를 보여줄 수 있다.
   if (params.slug === 'not') {
@@ -30,6 +31,7 @@ export default function Pants({ params }: Props) {
   (10개의 하위 경로만 필요해서 10개만 미리 만들어 놓는 식으로도 사용할 수 있다.)
 */
 export function generateStaticParams() {
+  // 모든 제품의 페이지들을 미리 만들어 둘 수 있게 해줄거임(SSG)
   const products = ['pants', 'skirt', 'shirt', 'shoes'];
 
   return products.map((product) => ({
