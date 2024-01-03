@@ -1,5 +1,6 @@
 // 동적 라우팅 사용 이유 만약 특정 경로의 하위 경로가 100개 있을 경우 100개의 폴더를 만들어야하는 것은 비효율적이기 때문에
 // 동적 라우팅을 하기 위해서 폴더명을 []를 해주면 되는데 []안에 들어갈 이름은 자유지만 보통 slug로 해준다.
+import { getProduct, getProducts } from '@/service/products';
 import { notFound } from 'next/navigation';
 
 type Props = {
@@ -9,19 +10,22 @@ type Props = {
 };
 
 // 동적 메타데이터
-export function generateMetadata({ params }: Props) {
+export function generateMetadata({ params: { slug } }: Props) {
   return {
-    title: `제품 이름: ${params.slug}`,
+    title: `제품 이름: ${slug}`,
   };
 }
 
 // 서버 파일에 있는 데이터중 해당 제품의 정보를 찾아서 그걸 보여줌
 export default function Pants({ params }: Props) {
+  const product = getProduct(params.slug);
+
   // 경로 별로 not-found 파일을 만들면 경로 별로 다른 UI를 보여줄 수 있다.
-  if (params.slug === 'not') {
+  if (!product) {
     notFound();
   }
-  return <h1>{params.slug} 제품 설명 페이지!</h1>;
+
+  return <h1>{product} 제품 설명 페이지!</h1>;
 }
 
 /* 
@@ -32,7 +36,7 @@ export default function Pants({ params }: Props) {
 */
 export function generateStaticParams() {
   // 모든 제품의 페이지들을 미리 만들어 둘 수 있게 해줄거임(SSG)
-  const products = ['pants', 'skirt', 'shirt', 'shoes'];
+  const products = getProducts();
 
   return products.map((product) => ({
     slug: product,
