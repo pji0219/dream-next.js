@@ -2,8 +2,9 @@ import { getProducts } from '@/service/products';
 import Link from 'next/link';
 
 // 서버 파일(데이터베이스)에 있는 제품의 리스트를 읽어와서 그걸 보여줌
-export default function ProductsPage() {
-  const products = getProducts();
+// getProducts함수가 promise를 리턴하기 때문에 다 불러와진 후 값을 쓰기 위해 async await을 써줌
+export default async function ProductsPage() {
+  const products = await getProducts();
 
   return (
     <>
@@ -11,7 +12,7 @@ export default function ProductsPage() {
       <ul>
         {products.map((product, index) => (
           <li key={index}>
-            <Link href={`/products/${product}`}>{product}</Link>
+            <Link href={`/products/${product.id}`}>{product.name}</Link>
           </li>
         ))}
       </ul>
