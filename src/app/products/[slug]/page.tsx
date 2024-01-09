@@ -3,6 +3,9 @@
 import { getProduct, getProducts } from '@/service/products';
 import { notFound } from 'next/navigation';
 
+// ISR을 하고 싶으면 page나 layout파일에 써주면 됨, 3초마다 ISR
+export const revalidate = 3;
+
 type Props = {
   params: {
     slug: string;
