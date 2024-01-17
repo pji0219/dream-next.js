@@ -1,4 +1,5 @@
 import Counter from '@/components/Counter';
+import Image from 'next/image';
 import os from 'os'; // 노드 APIs
 
 /**
@@ -32,6 +33,13 @@ export default function HomePage() {
     <>
       <h1>홈 페이지다!</h1>
       <Counter />
+      {/* 이미지 주소로 가져올 경우에는 next.config에서 설정해주어야한다. */}
+      <Image
+        src='https://mblogthumb-phinf.pstatic.net/MjAxNzAzMTVfMjg4/MDAxNDg5NTMzMTAwMzU5.u9nlK1lF0wP5i5l6oyNw0Z479HoiyIEklEW8f_Hjwwgg.LFGQAUkRPJf529nZNdOFrLIxl1oldUzOQly0NZVF4_Yg.JPEG.doghter4our/IMG_5253.jpg?type=w800'
+        alt='꼬부기'
+        width={400}
+        height={400}
+      />
     </>
   );
 }
