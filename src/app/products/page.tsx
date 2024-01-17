@@ -8,6 +8,7 @@ import MeowArticle from '@/components/MeowArticle';
 // 서버 파일(데이터베이스)에 있는 제품의 리스트를 읽어와서 그걸 보여줌
 // getProducts함수가 promise를 리턴하기 때문에 다 불러와진 후 값을 쓰기 위해 async await을 써줌
 export default async function ProductsPage() {
+  throw new Error();
   const products = await getProducts();
 
   // 네트워크 통신으로 데이터베이스에 있는 데이터를 가져오기 위해서 서버 컴포넌트에서도 fetch사용 가능
