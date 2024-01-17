@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getProducts } from '@/service/products';
 import MeowArticle from '@/components/MeowArticle';
 import Image from 'next/image';
-import clothesImage from '../../../public/images/clothes.jpg';
+import clothesImage from 'public/images/clothes.jpg';
 
 // ISR을 하고 싶으면 page나 layout파일에 써주면 됨, 3초마다 ISR
 // export const revalidate = 3;
