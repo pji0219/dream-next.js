@@ -2,10 +2,17 @@ import Link from 'next/link';
 
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
+import { Nanum_Gothic } from 'next/font/google';
 import styles from './layout.module.css';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
+const sans = Open_Sans({ subsets: ['latin'] });
+const gothic = Nanum_Gothic({
+  weight: '700',
+  subsets: ['latin'],
+});
 
 /**
   metadata를 레이아웃 파일에 하면 전체 페이지에 적용이 되고 page파일에 하면 그 페이지에만 적용 된다.
@@ -29,11 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
+    <html lang='en' className={sans.className}>
+      <body>
         <header className={styles.header}>
           <Link href='/'>
-            <h1>Demo Note</h1>
+            <h1 className={gothic.className}>Demo Note</h1>
           </Link>
           <nav className={styles.nav}>
             <Link href='/products'>products</Link>
