@@ -1,8 +1,9 @@
 // 동적 라우팅 사용 이유 만약 특정 경로의 하위 경로가 100개 있을 경우 100개의 폴더를 만들어야하는 것은 비효율적이기 때문에
 // 동적 라우팅을 하기 위해서 폴더명을 []를 해주면 되는데 []안에 들어갈 이름은 자유지만 보통 slug로 해준다.
 import { getProduct, getProducts } from '@/service/products';
+import { redirect } from 'next/navigation';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import GoProductButton from '@/components/GoProductButton';
 
 // ISR을 하고 싶으면 page나 layout파일에 써주면 됨, 3초마다 ISR
 export const revalidate = 3;
@@ -27,7 +28,8 @@ export default async function ProductPage({ params }: Props) {
 
   // 경로 별로 not-found 파일을 만들면 경로 별로 다른 UI를 보여줄 수 있다.
   if (!product) {
-    notFound();
+    // notFound();
+    redirect('/products');
   }
 
   return (
@@ -39,6 +41,7 @@ export default async function ProductPage({ params }: Props) {
         width={300}
         height={300}
       />
+      <GoProductButton />
     </>
   );
 }
