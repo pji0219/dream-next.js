@@ -31,7 +31,7 @@ export default function HomePage() {
   // const [name, setName] = useState('');
   return (
     <>
-      <h1>홈 페이지다! ver4</h1>
+      <h1>홈 페이지다! ver5</h1>
       <Counter />
       {/* 이미지 주소로 가져올 경우에는 next.config에서 설정해주어야한다. */}
       <Image
