@@ -49,6 +49,7 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
+        <footer className={styles.footer}>v0.1.0</footer>
       </body>
     </html>
   );
