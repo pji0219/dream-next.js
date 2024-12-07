@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  margin-top: 8px;
+  padding: 16px;
+  border: 1px solid slateblue;
+}
+
+.nav a {
+  padding: 0 8px;
+}

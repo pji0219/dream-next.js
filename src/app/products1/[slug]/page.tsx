@@ -17,13 +17,13 @@ export function generateMetadata({ params: { slug } }: Props) {
 }
 
 // 제품 설명 페이지의 기본 골격은 프리 렌더링 됨 params로 받아온 키워드에 대한 페이지는 요청 시에 SSR
-export default function PantPage({ params }: Props) {
+export default function PantPage({ params: { slug } }: Props) {
   // 경로 별로 not-found 파일을 만들면 경로 별로 다른 UI를 보여줄 수 있다.
-  if (params.slug === 'not') {
+  if (slug === 'not') {
     notFound();
   }
 
-  return <h1>{params.slug}제품 설명 페이지</h1>;
+  return <h1>{slug}제품 설명 페이지</h1>;
 }
 
 // 빌드 시에 해당 키워드에 한해서는 미리 페이지를 만들어 놓음
