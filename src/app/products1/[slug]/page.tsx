@@ -19,7 +19,7 @@ export function generateMetadata({ params: { slug } }: Props) {
 // 제품 설명 페이지의 기본 골격은 프리 렌더링 됨 params로 받아온 키워드에 대한 페이지는 요청 시에 SSR
 export default function PantPage({ params }: Props) {
   // 경로 별로 not-found 파일을 만들면 경로 별로 다른 UI를 보여줄 수 있다.
-  if (!params.slug) {
+  if (params.slug === 'not') {
     notFound();
   }
 
