@@ -4,7 +4,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function ProductsLayout({ children }: Props) {
+export default function ContactLayout({ children }: Props) {
   return (
     <>
       <nav className={styles.nav}>
