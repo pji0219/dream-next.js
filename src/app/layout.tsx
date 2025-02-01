@@ -43,8 +43,8 @@ export default function RootLayout({
             <h1 className={gothic.className}>Demo Note</h1>
           </Link>
           <nav className={styles.nav}>
-            <Link href='/products'>products</Link>
-            <Link href='/contact'>Contract</Link>
+            <Link href='/products1'>products</Link>
+            <Link href='/contact2'>Contract</Link>
             <Link href='/pji'>About</Link>
           </nav>
         </header>
