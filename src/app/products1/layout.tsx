@@ -1,9 +1,15 @@
 // 'use client';
 // import { useSearchParams } from 'next/navigation';
+import { Metadata } from 'next';
 import styles from './layout.module.css';
 
 type Props = {
   children: React.ReactNode;
+};
+
+export const metadata: Metadata = {
+  title: '멋진 제품 사이트 | 전체 제품 확인',
+  description: '멋진 제품을 판매하는 곳입니다.',
 };
 
 export default function ProductsLayout({ children }: Props) {
